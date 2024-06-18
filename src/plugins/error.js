@@ -20,12 +20,14 @@ export default plugin(
       U1: "SIGN_IN_ERR",
       U2: "SIGN_UP_ERR",
       U3: "SIGN_OUT_ERR",
-      U4: "UPDATE_GENRES_ERR"
+      U4: "UPDATE_GENRES_ERR",
+      ON1: "OPERATION_NAME_ERR"
     })
 
     app.decorate("errorMessage", {
       T1: "ValidationError: Book title too short. Must be over 18 characters",
-      A1: "ValidationError: Author's first or last name too short, must be over 4 characters"
+      A1: "ValidationError: Author's first or last name too short, must be over 4 characters",
+      ON1: "Operation name required"
     })
 
     app.setErrorHandler(
