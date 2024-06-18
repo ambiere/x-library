@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "$id": "schema:dotenv",
+  "required": [
+    "DATABASE_URL",
+    "DIRECT_URL"
+  ],
+  "properties": {
+    "NODE_ENV": {
+      "type": "string",
+      "default": "development"
+    },
+    "PORT": {
+      "type": "string",
+      "default": 3000
+    },
+    "DATABASE_URL": {
+      "type": "string"
+    },
+    "DIRECT_URL": {
+      "type": "string"
+    },
+    "JWT_SECRET": {
+      "type": "string"
+    },
+    "JWT_EXPIRE_IN": {
+      "type": "string",
+      "default": "1h"
+    },
+    "LOG_LEVEL": {
+      "type": "string"
+    },
+    "ANON_KEY": {
+      "type": "string"
+    },
+    "SUPABASE_URL": {
+      "type": "string"
+    }
+  }
+}
