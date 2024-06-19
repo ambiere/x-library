@@ -20,18 +20,22 @@ export async function findMany(args, context) {
       })
 
     if (args.author) {
-      const authorId = await context
-        .prisma
-        .author
-        .findUnique({
-          select: { id: true },
-          where: { name: args.author }
-        })
+      try {
+        const authorId = await context
+          .prisma
+          .author
+          .findUnique({
+            select: { id: true },
+            where: { name: args.author }
+          })
 
-      return [
-        books.filter(book => book.authorId === authorId.id),
-        null
-      ]
+        return [
+          books.filter(book => book.authorId === authorId.id),
+          null
+        ]
+      } catch (err) {
+        throw new Error("Book author not found")
+      }
     }
     return [books, null]
   } catch (err) {
