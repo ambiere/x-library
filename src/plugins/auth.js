@@ -7,7 +7,7 @@ export default plugin(
         query = query.toUpperCase()
         if (authNotRequired(query)) return
         const { data, error } = await context.auth.getUser()
-        if (error) return context.throw(context.errorCode.A3, error.message)
+        if (error) context.throw(context.errorCode.AU1, error.message)
         return app.user = data.user
       }
     )
